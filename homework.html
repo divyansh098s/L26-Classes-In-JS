@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Homework</title>
+</head>
+<body>
+<h1>
+Javascript Class Inheritance
+</h1>
+<p id="details"></p>
+<p id="greetings"></p>
+</body>
+<script>
+class Student {
+constructor(name){
+this.studentName = name;
+}
+static Welcome(){
+return "Welcome";
+}
+present(){
+return 'My Name Is ' + this.studentName;
+}
+}
+class Grade extends Student{
+constructor(name , grade) {
+super(name);
+this.studentGrade = grade;
+}
+show(){
+return this.present() + ' , From ' + this.studentGrade;
+}
+}
+let myStudent = new Grade("Divyansh" , "Grade 7 " );
+document.getElementById("details").innerHTML = myStudent.show();
+document.getElementById("greetings").innerHTML = Student.Welcome();
+</script>
+</html>
